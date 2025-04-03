@@ -1,7 +1,7 @@
 {
-  "homepage": "https://abdulhafiz0007.github.io/SigmaService",
   "name": "sigma-service",
   "private": true,
+  "homepage": "https://abdulhafiz0007.github.io/SigmaService",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.6.3",
