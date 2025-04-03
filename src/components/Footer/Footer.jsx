@@ -8,10 +8,11 @@ import {
    CopyrightIcon,
    RightArrowIcon,
 } from "../../assets/images/Icons";
+import FooterImg from "../../assets/images/footer-bg.jpg"
 
 export const Footer = () => {
    return (
-      <footer className="relative bg-[url('/assets/images/footer-bg.jpg')] bg-cover bg-center">
+      <footer style={{ backgroundImage: `url(${FooterImg})` }} className="relative bg-cover bg-center">
          <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.9)] opacity-90"></div>
          <div className="relative lg:w-[1250px] px-[25px] m-auto flex flex-col gap-[50px] lg:flex-row items-start justify-between pt-[96px]">
             <div className="flex flex-col">

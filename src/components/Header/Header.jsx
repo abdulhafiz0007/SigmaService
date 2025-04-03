@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/images/Link.png";
 import RightArrow from "../../assets/images/right-arrow.png";
 import MenuImg from "../../assets/images/menu-img.png";
@@ -8,9 +6,9 @@ import { motion } from "framer-motion";
 
 export const Header = () => {
    const [isFixed, setIsFixed] = useState(false);
-   const [active, isActive] = useState(false);
+   const [active, setActive] = useState(false);
+   const [activeLink, setActiveLink] = useState("#home"); // Track the active link
 
-   
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY > 200) {
@@ -26,7 +24,7 @@ export const Header = () => {
 
    const HeaderVariant = {
       initial: {
-         y: 0
+         y: 0,
       },
       hidden: {
          y: "-100px",
@@ -38,6 +36,11 @@ export const Header = () => {
             type: "tween",
          },
       },
+   };
+
+   // Update the active link state when a nav item is clicked
+   const handleNavClick = (linkId) => {
+      setActiveLink(linkId); // Set the clicked link as active
    };
 
    return (
@@ -58,34 +61,54 @@ export const Header = () => {
             <div className="flex items-center gap-4">
                <nav className="site-header__nav navbar hidden lg:block">
                   <ul className="flex items-center gap-4">
-                     <li className="navbar__item">
+                     <li
+                        onClick={() => handleNavClick("#home")}
+                        className="navbar__item"
+                     >
                         <a
                            href="#home"
-                           className="navbar__item-link font-medium text-[#D81324]"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#home" ? "text-[#D81324]" : "text-[#111111]"
+                           }`}
                         >
                            Главная
                         </a>
                      </li>
-                     <li className="navbar__item">
+                     <li
+                        onClick={() => handleNavClick("#about")}
+                        className="navbar__item"
+                     >
                         <a
                            href="#about"
-                           className="navbar__item-link font-medium text-[#111111]"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#about" ? "text-[#D81324]" : "text-[#111111]"
+                           }`}
                         >
                            О нас
                         </a>
                      </li>
-                     <li className="navbar__item">
+                     <li
+                        onClick={() => handleNavClick("#service")}
+                        className="navbar__item"
+                     >
                         <a
                            href="#service"
-                           className="navbar__item-link font-medium text-[#111111]"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#service" ? "text-[#D81324]" : "text-[#111111]"
+                           }`}
                         >
                            Услуги
                         </a>
                      </li>
-                     <li className="navbar__item">
+                     <li
+                        onClick={() => handleNavClick("#contact")}
+                        className="navbar__item"
+                     >
                         <a
                            href="#contact"
-                           className="navbar__item-link font-medium text-[#111111]"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#contact" ? "text-[#D81324]" : "text-[#111111]"
+                           }`}
                         >
                            Контакты
                         </a>
@@ -101,49 +124,69 @@ export const Header = () => {
                   </ul>
                </nav>
                <div className="lg:flex items-center gap-4 w-[279px] bg-red-600 py-[28px] px-[50px] hidden lg:block">
-                  <a className="text-white " href="">
+                  <a className="text-white" href="">
                      Вызвать мастера
                   </a>
                   <img src={RightArrow} alt="" />
                </div>
                <button
-                  onClick={() => isActive(!active)}
+                  onClick={() => setActive(!active)}
                   className="w-[40px] h-[40px] mr-[30px] p-2 border-2 border-slate-400 lg:hidden"
                >
                   <img src={MenuImg} alt="Menu icon" />
                </button>
             </div>
          </div>
-         <nav className={`${active ? "block pl-[60px] py-3 " : "hidden"}`}>
+         <nav className={`${active ? "block pl-[60px] py-3" : "hidden"}`}>
             <ul className="flex flex-col items-start gap-4">
-               <li className="navbar__item">
+               <li
+                  onClick={() => handleNavClick("#home")}
+                  className="navbar__item"
+               >
                   <a
                      href="#home"
-                     className="navbar__item-link font-medium text-[#D81324]"
+                     className={`navbar__item-link font-medium ${
+                        activeLink === "#home" ? "text-[#D81324]" : "text-[#111111]"
+                     }`}
                   >
                      Главная
                   </a>
                </li>
-               <li className="navbar__item">
+               <li
+                  onClick={() => handleNavClick("#about")}
+                  className="navbar__item"
+               >
                   <a
                      href="#about"
-                     className="navbar__item-link font-medium text-[#111111]"
+                     className={`navbar__item-link font-medium ${
+                        activeLink === "#about" ? "text-[#D81324]" : "text-[#111111]"
+                     }`}
                   >
                      О нас
                   </a>
                </li>
-               <li className="navbar__item">
+               <li
+                  onClick={() => handleNavClick("#service")}
+                  className="navbar__item"
+               >
                   <a
                      href="#service"
-                     className="navbar__item-link font-medium text-[#111111]"
+                     className={`navbar__item-link font-medium ${
+                        activeLink === "#service" ? "text-[#D81324]" : "text-[#111111]"
+                     }`}
                   >
                      Услуги
                   </a>
                </li>
-               <li className="navbar__item">
+               <li
+                  onClick={() => handleNavClick("#contact")}
+                  className="navbar__item"
+               >
                   <a
                      href="#contact"
-                     className="navbar__item-link font-medium text-[#111111]"
+                     className={`navbar__item-link font-medium ${
+                        activeLink === "#contact" ? "text-[#D81324]" : "text-[#111111]"
+                     }`}
                   >
                      Контакты
                   </a>
