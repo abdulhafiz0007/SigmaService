@@ -11,7 +11,6 @@ import BgImg1 from "../../assets/images/bg-img.png";
 import BgImg2 from "../../assets/images/malibu.jpg";
 import BgImg3 from "../../assets/images/lacetti.png";
 import PradoImg from "../../assets/images/carousel-2.png";
-import { Form } from "../Form/Form";
 import { useContext } from "react";
 import { FormContext } from "../../context/FormContext";
 
@@ -82,7 +81,7 @@ export const About = () => {
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
-                           className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
+                           className="hover:bg-red-500 transition-all cursor-pointer inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
                            <a className="text-white" href="#">
                               {" "}
@@ -131,7 +130,7 @@ export const About = () => {
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
-                           className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
+                           className="hover:bg-red-500 transition-all cursor-pointer inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
                            <a className="text-white" href="#">
                               {" "}
@@ -180,7 +179,7 @@ export const About = () => {
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
-                           className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
+                           className="hover:bg-red-500 transition-all cursor-pointer inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
                            <a className="text-white" href="#">
                               {" "}

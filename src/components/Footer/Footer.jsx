@@ -17,7 +17,7 @@ export const Footer = () => {
    const {setIsFormActive} = useContext(FormContext);
 
    return (
-      <footer style={{ backgroundImage: `url(${FooterImg})` }} className="relative bg-cover bg-center">
+      <footer id="footer" style={{ backgroundImage: `url(${FooterImg})` }} className="relative bg-cover bg-center">
          <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.9)] opacity-90"></div>
          <div className="relative lg:w-[1250px] px-[25px] m-auto flex flex-col gap-[50px] lg:flex-row items-start justify-between pt-[96px]">
             <div className="flex flex-col">
@@ -122,7 +122,7 @@ export const Footer = () => {
                   Контакты
                </h2>
                <div onClick={() => setIsFormActive(true)} className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[55px] cursor-pointer">
-                  <a className="text-white" href="#">
+                  <a className="text-white" href="#footer">
                      Вызвать мастера
                   </a>
                   <img src={RightArrow} alt="" />

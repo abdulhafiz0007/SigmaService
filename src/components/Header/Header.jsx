@@ -136,7 +136,7 @@ export const Header = () => {
                </nav>
                <div
                   onClick={() => setIsFormActive(true)}
-                  className="lg:flex items-center cursor-pointer gap-4 w-[279px] bg-red-600 py-[28px] px-[50px] hidden lg:block"
+                  className="lg:flex items-center cursor-pointer hover:bg-red-500 transition-all gap-4 w-[279px] bg-red-600 py-[28px] px-[50px] hidden lg:block"
                >
                   <a className="text-white" href="#">
                      Вызвать мастера
