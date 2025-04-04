@@ -3,11 +3,15 @@ import Logo from "../../assets/images/Link.png";
 import RightArrow from "../../assets/images/right-arrow.png";
 import MenuImg from "../../assets/images/menu-img.png";
 import { motion } from "framer-motion";
+import { Form } from "../Form/Form";
+import { useContext } from "react";
+import { FormContext } from "../../context/FormContext";
 
 export const Header = () => {
    const [isFixed, setIsFixed] = useState(false);
    const [active, setActive] = useState(false);
-   const [activeLink, setActiveLink] = useState("#home"); // Track the active link
+   const [activeLink, setActiveLink] = useState("#home"); 
+   const { isFormActive, setIsFormActive } = useContext(FormContext);
 
    useEffect(() => {
       const handleScroll = () => {
@@ -38,9 +42,8 @@ export const Header = () => {
       },
    };
 
-   // Update the active link state when a nav item is clicked
    const handleNavClick = (linkId) => {
-      setActiveLink(linkId); // Set the clicked link as active
+      setActiveLink(linkId); 
    };
 
    return (
@@ -68,7 +71,9 @@ export const Header = () => {
                         <a
                            href="#home"
                            className={`navbar__item-link font-medium ${
-                              activeLink === "#home" ? "text-[#D81324]" : "text-[#111111]"
+                              activeLink === "#home"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
                            }`}
                         >
                            Главная
@@ -81,7 +86,9 @@ export const Header = () => {
                         <a
                            href="#about"
                            className={`navbar__item-link font-medium ${
-                              activeLink === "#about" ? "text-[#D81324]" : "text-[#111111]"
+                              activeLink === "#about"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
                            }`}
                         >
                            О нас
@@ -94,7 +101,9 @@ export const Header = () => {
                         <a
                            href="#service"
                            className={`navbar__item-link font-medium ${
-                              activeLink === "#service" ? "text-[#D81324]" : "text-[#111111]"
+                              activeLink === "#service"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
                            }`}
                         >
                            Услуги
@@ -107,7 +116,9 @@ export const Header = () => {
                         <a
                            href="#contact"
                            className={`navbar__item-link font-medium ${
-                              activeLink === "#contact" ? "text-[#D81324]" : "text-[#111111]"
+                              activeLink === "#contact"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
                            }`}
                         >
                            Контакты
@@ -123,8 +134,11 @@ export const Header = () => {
                      </li>
                   </ul>
                </nav>
-               <div className="lg:flex items-center gap-4 w-[279px] bg-red-600 py-[28px] px-[50px] hidden lg:block">
-                  <a className="text-white" href="">
+               <div
+                  onClick={() => setIsFormActive(true)}
+                  className="lg:flex items-center cursor-pointer gap-4 w-[279px] bg-red-600 py-[28px] px-[50px] hidden lg:block"
+               >
+                  <a className="text-white" href="#">
                      Вызвать мастера
                   </a>
                   <img src={RightArrow} alt="" />
@@ -146,7 +160,9 @@ export const Header = () => {
                   <a
                      href="#home"
                      className={`navbar__item-link font-medium ${
-                        activeLink === "#home" ? "text-[#D81324]" : "text-[#111111]"
+                        activeLink === "#home"
+                           ? "text-[#D81324]"
+                           : "text-[#111111]"
                      }`}
                   >
                      Главная
@@ -159,7 +175,9 @@ export const Header = () => {
                   <a
                      href="#about"
                      className={`navbar__item-link font-medium ${
-                        activeLink === "#about" ? "text-[#D81324]" : "text-[#111111]"
+                        activeLink === "#about"
+                           ? "text-[#D81324]"
+                           : "text-[#111111]"
                      }`}
                   >
                      О нас
@@ -172,7 +190,9 @@ export const Header = () => {
                   <a
                      href="#service"
                      className={`navbar__item-link font-medium ${
-                        activeLink === "#service" ? "text-[#D81324]" : "text-[#111111]"
+                        activeLink === "#service"
+                           ? "text-[#D81324]"
+                           : "text-[#111111]"
                      }`}
                   >
                      Услуги
@@ -185,7 +205,9 @@ export const Header = () => {
                   <a
                      href="#contact"
                      className={`navbar__item-link font-medium ${
-                        activeLink === "#contact" ? "text-[#D81324]" : "text-[#111111]"
+                        activeLink === "#contact"
+                           ? "text-[#D81324]"
+                           : "text-[#111111]"
                      }`}
                   >
                      Контакты
@@ -201,6 +223,7 @@ export const Header = () => {
                </li>
             </ul>
          </nav>
+         <Form isFormActive={isFormActive} setIsFormActive={setIsFormActive} />
       </motion.header>
    );
 };

@@ -11,9 +11,12 @@ import BgImg1 from "../../assets/images/bg-img.png";
 import BgImg2 from "../../assets/images/malibu.jpg";
 import BgImg3 from "../../assets/images/lacetti.png";
 import PradoImg from "../../assets/images/carousel-2.png";
+import { Form } from "../Form/Form";
+import { useContext } from "react";
+import { FormContext } from "../../context/FormContext";
 
 export const About = () => {
-   const [animationKey, setAnimationKey] = useState(0); 
+   const [animationKey, setAnimationKey] = useState(0);
 
    const TitleVariant = {
       hidden: { y: "-80px", opacity: 0 },
@@ -35,12 +38,12 @@ export const About = () => {
          height: "368px",
          transition: {
             duration: 1,
-            type: "tween"
-         }
-      }
-   }
+            type: "tween",
+         },
+      },
+   };
 
-
+   const { setIsFormActive } = useContext(FormContext);
 
    return (
       <div className="relative lg:h-screen">
@@ -61,7 +64,9 @@ export const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.7)] opacity-90"></div>
                   <div className="relative flex justify-center lg:justify-between items-center lg:pt-[150px] lg:px-[160px]">
                      <div className="flex flex-col justify-center items-center lg:items-start w-[250px] lg:w-full">
-                        <p className="text-white text-center lg:text-left">// Ремонт автомобилей //</p>
+                        <p className="text-white text-center lg:text-left">
+                           // Ремонт автомобилей //
+                        </p>
                         <motion.h1
                            key={`title-${animationKey}`}
                            variants={TitleVariant}
@@ -72,17 +77,29 @@ export const About = () => {
                            Ремонт автомобиля в рассрочку
                         </motion.h1>
                         <motion.div
+                           onClick={() => setIsFormActive(true)}
                            key={`button-${animationKey}`}
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
                            className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
-                           <a className="text-white" href=""> Узнать больше </a>
+                           <a className="text-white" href="#">
+                              {" "}
+                              Узнать больше{" "}
+                           </a>
                            <img src={RightArrow} alt="" />
                         </motion.div>
                      </div>
-                     <motion.img key={`img-${animationKey}`} variants={ImgVariant} initial="hidden" animate="visible" className="hidden lg:block" src={MersImg} alt="Mers Image" />
+                     <motion.img
+                        key={`img-${animationKey}`}
+                        variants={ImgVariant}
+                        initial="hidden"
+                        animate="visible"
+                        className="hidden lg:block"
+                        src={MersImg}
+                        alt="Mers Image"
+                     />
                   </div>
                </div>
             </SwiperSlide>
@@ -96,7 +113,9 @@ export const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.7)] opacity-90"></div>
                   <div className="relative flex justify-center items-center lg:pt-[150px] lg:px-[160px]">
                      <div className="flex flex-col justify-center items-center lg:items-start w-[250px] lg:w-full">
-                        <p className="text-white text-center lg:text-left">// Ремонт автомобилей //</p>
+                        <p className="text-white text-center lg:text-left">
+                           // Ремонт автомобилей //
+                        </p>
                         <motion.h1
                            key={`title-${animationKey}`}
                            variants={TitleVariant}
@@ -107,17 +126,29 @@ export const About = () => {
                            Помощь на дороге
                         </motion.h1>
                         <motion.div
+                           onClick={() => setIsFormActive(true)}
                            key={`button-${animationKey}`}
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
                            className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
-                           <a className="text-white" href=""> Узнать больше </a>
+                           <a className="text-white" href="#">
+                              {" "}
+                              Узнать больше{" "}
+                           </a>
                            <img src={RightArrow} alt="" />
                         </motion.div>
                      </div>
-                     <motion.img key={`img-${animationKey}`} variants={ImgVariant} initial="hidden" animate="visible" className="hidden lg:block" src={PradoImg} alt="Mers Image" />
+                     <motion.img
+                        key={`img-${animationKey}`}
+                        variants={ImgVariant}
+                        initial="hidden"
+                        animate="visible"
+                        className="hidden lg:block"
+                        src={PradoImg}
+                        alt="Mers Image"
+                     />
                   </div>
                </div>
             </SwiperSlide>
@@ -131,7 +162,9 @@ export const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.7)] opacity-90"></div>
                   <div className="relative flex justify-center items-center lg:pt-[150px] lg:px-[160px]">
                      <div className="flex flex-col justify-center items-center lg:items-start w-[250px] lg:w-full">
-                        <p className="text-white text-center lg:text-left">// Ремонт автомобилей //</p>
+                        <p className="text-white text-center lg:text-left">
+                           // Ремонт автомобилей //
+                        </p>
                         <motion.h1
                            key={`title-${animationKey}`}
                            variants={TitleVariant}
@@ -142,17 +175,29 @@ export const About = () => {
                            Автозапчасти лучшего качества
                         </motion.h1>
                         <motion.div
+                           onClick={() => setIsFormActive(true)}
                            key={`button-${animationKey}`}
                            variants={ButtonVariant}
                            initial="hidden"
                            animate="visible"
                            className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[28px] mt-4"
                         >
-                           <a className="text-white" href=""> Узнать больше </a>
+                           <a className="text-white" href="#">
+                              {" "}
+                              Узнать больше{" "}
+                           </a>
                            <img src={RightArrow} alt="" />
                         </motion.div>
                      </div>
-                     <motion.img key={`img-${animationKey}`} variants={ImgVariant} initial="hidden" animate="visible" className="hidden lg:block" src={PradoImg} alt="Mers Image" />
+                     <motion.img
+                        key={`img-${animationKey}`}
+                        variants={ImgVariant}
+                        initial="hidden"
+                        animate="visible"
+                        className="hidden lg:block"
+                        src={PradoImg}
+                        alt="Mers Image"
+                     />
                   </div>
                </div>
             </SwiperSlide>
