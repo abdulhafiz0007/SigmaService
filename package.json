@@ -1,7 +1,6 @@
 {
   "name": "sigma-service",
   "private": true,
-  "homepage": "https://abdulhafiz0007.github.io/SigmaService",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
