@@ -38,10 +38,10 @@ export const Form = ({ isFormActive, setIsFormActive }) => {
             <motion.form
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
-               transition={{ duration: 0.5 }}
+               transition={{ duration: 0.3 }}
                onSubmit={sendMessage}
                onClick={(evt) => evt.stopPropagation()}
-               className="myForm fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  z-50 w-[400px] flex flex-col p-[24px] border-2 border-slate-600 rounded-lg bg-white"
+               className="myForm fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  z-50 lg:w-[400px] w-[300px] flex flex-col p-[24px] border-2 border-slate-600 rounded-lg bg-white"
             >
                <label htmlFor="">Name</label>
                <input

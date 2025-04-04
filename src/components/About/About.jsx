@@ -46,7 +46,7 @@ export const About = () => {
    const { setIsFormActive } = useContext(FormContext);
 
    return (
-      <div className="relative lg:h-screen">
+      <div className="relative lg:h-screen" id="home">
          <Swiper
             modules={[Navigation]}
             spaceBetween={50}

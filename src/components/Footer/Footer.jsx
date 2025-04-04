@@ -9,8 +9,13 @@ import {
    RightArrowIcon,
 } from "../../assets/images/Icons";
 import FooterImg from "../../assets/images/footer-bg.jpg"
+import { useContext } from "react";
+import { FormContext } from "../../context/FormContext";
 
 export const Footer = () => {
+
+   const {setIsFormActive} = useContext(FormContext);
+
    return (
       <footer style={{ backgroundImage: `url(${FooterImg})` }} className="relative bg-cover bg-center">
          <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[rgba(0,0,0,0.9)] opacity-90"></div>
@@ -38,8 +43,12 @@ export const Footer = () => {
                   </a>
                </div>
                <div className="flex items-center gap-2 mt-4">
-                  <InstagramIcon />
-                  <TelegramIcon />
+                  <a target="_blank" href="https://instagram.com">
+                     <InstagramIcon />
+                  </a>
+                  <a target="_blank" href="https://t.me/sigma_autoservice">
+                     <TelegramIcon />
+                  </a>
                </div>
             </div>
             <div>
@@ -52,59 +61,59 @@ export const Footer = () => {
             <div>
                <h2 className="text-white font-bold text-[24px] mb-3">Услуги</h2>
                <ul className="flex flex-col gap-2">
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white text-white">
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">
                         Диагностика
-                     </p>
+                     </a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">
                         Обслуживание Двигателя
-                     </p>
+                     </a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Замена Шин</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Замена Шин</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Замена Масла</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Замена Масла</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Токарная услуга</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Токарная услуга</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Тонировка</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Тонировка</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Моторист</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Моторист</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Кастаправ</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Кастаправ</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Вакуумная Чистка</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Вакуумная Чистка</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Авто-Электрик</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Авто-Электрик</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">Авто-Механик</p>
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">Авто-Механик</a>
                   </li>
-                  <li className="flex items-center gap-[10px]">
+                  <li className="flex items-center gap-[10px] cursor-pointer">
                      <RightArrowIcon />
-                     <p className="text-[15px] text-white">
+                     <a href="#home" className="text-[15px] text-white hover:text-red-500 transition-all">
                         Выезд Автоэлектрик <br /> Круглосуточный
-                     </p>
+                     </a>
                   </li>
                </ul>
             </div>
@@ -112,8 +121,8 @@ export const Footer = () => {
                <h2 className="text-white text-[24px] font-bold mb-3">
                   Контакты
                </h2>
-               <div className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[55px]">
-                  <a className="text-white" href="">
+               <div onClick={() => setIsFormActive(true)} className="inline-flex items-center gap-4 bg-red-600 py-[10px] px-[55px] cursor-pointer">
+                  <a className="text-white" href="#">
                      Вызвать мастера
                   </a>
                   <img src={RightArrow} alt="" />
