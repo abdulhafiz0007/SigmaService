@@ -75,6 +75,8 @@ export const Form = ({ isFormActive, setIsFormActive }) => {
                draggable
                pauseOnHover
                theme="light"
+               toastClassName="!w-[80%] sm:!w-[400px] !mx-auto mt-5"
+               bodyClassName="text-sm"
             />
          </div>
       )
