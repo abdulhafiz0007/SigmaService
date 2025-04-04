@@ -1,8 +1,8 @@
 import React from "react";
 import RemontImg from "../../assets/images/remont.png";
-import BgImg1 from "../../assets/images/background.png";
-import BgImg2 from "../../assets/images/background2.png";
-import BgImg3 from "../../assets/images/background3.png";
+import BgImg1 from "../../assets/images/Background.png";
+import BgImg2 from "../../assets/images/Background2.png";
+import BgImg3 from "../../assets/images/Background3.png";
 import RightArrow from "../../assets/images/right-arrow.png";
 import { motion } from "framer-motion";
 import { useContext } from "react";
