@@ -72,7 +72,7 @@ export const Service = () => {
             variants={TitleVariant2}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="flex items-center gap-4 w-[390px] h-[133px] bg-[#F2F2F2] py-[48px] pl-[24px] pr-[193px] service-item"
+            className="flex items-center gap-4 w-[390px] h-[133px] bg-[#F2F2F2] py-[48px] pl-[30px] pr-[30px] service-item"
          >
             <Icon />
             <p>{text}</p>
@@ -105,8 +105,7 @@ export const Service = () => {
             <ServiceItem icon={ServiceIcon4} text="Авто-Вулканизация" delay={0.8} />
             <ServiceItem icon={ServiceIcon5} text="Вскрытия Автомобиля" delay={0.9} />
             <ServiceItem icon={ServiceIcon6} text="Выезд Автомастер Круглосуточный" delay={1.0} />
-            <ServiceItem icon={ServiceIcon7} text="Выезд Автоэлектрик
-Круглосуточный" delay={1.1} />
+            <ServiceItem icon={ServiceIcon1} text="Выезд Автоэлектрик Круглосуточный" delay={1.1} />
             <ServiceItem icon={ServiceIcon8} text="Замена Масла" delay={1.2} />
             <ServiceItem icon={ServiceIcon9} text="Замена Шин" delay={1.3} />
             <ServiceItem icon={ServiceIcon10} text="Обслуживание Двигателя" delay={1.4} />
