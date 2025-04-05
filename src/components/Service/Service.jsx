@@ -100,21 +100,22 @@ export const Service = () => {
          </motion.h2>
          <ul className="flex flex-wrap justify-center items-start mt-[48px] gap-[24px] services-list">
             <ServiceItem icon={ServiceIcon1} text="Авто-Электрик" delay={0.5} />
-            <ServiceItem icon={ServiceIcon2} text="Авто-Электрик" delay={0.6} />
-            <ServiceItem icon={ServiceIcon3} text="Авто-Электрик" delay={0.7} />
-            <ServiceItem icon={ServiceIcon4} text="Авто-Электрик" delay={0.8} />
-            <ServiceItem icon={ServiceIcon5} text="Авто-Электрик" delay={0.9} />
-            <ServiceItem icon={ServiceIcon6} text="Авто-Электрик" delay={1.0} />
-            <ServiceItem icon={ServiceIcon7} text="Авто-Электрик" delay={1.1} />
-            <ServiceItem icon={ServiceIcon8} text="Авто-Электрик" delay={1.2} />
-            <ServiceItem icon={ServiceIcon9} text="Авто-Электрик" delay={1.3} />
-            <ServiceItem icon={ServiceIcon10} text="Авто-Электрик" delay={1.4} />
-            <ServiceItem icon={ServiceIcon11} text="Авто-Электрик" delay={1.5} />
-            <ServiceItem icon={ServiceIcon12} text="Авто-Электрик" delay={1.6} />
-            <ServiceItem icon={ServiceIcon13} text="Авто-Электрик" delay={1.7} />
-            <ServiceItem icon={ServiceIcon14} text="Авто-Электрик" delay={1.8} />
-            <ServiceItem icon={ServiceIcon15} text="Авто-Электрик" delay={1.9} />
-            <ServiceItem icon={ServiceIcon16} text="Авто-Электрик" delay={2.0} />
+            <ServiceItem icon={ServiceIcon2} text="Авто-Механик" delay={0.6} />
+            <ServiceItem icon={ServiceIcon3} text="Ремонт Авто на Выезд" delay={0.7} />
+            <ServiceItem icon={ServiceIcon4} text="Авто-Вулканизация" delay={0.8} />
+            <ServiceItem icon={ServiceIcon5} text="Вскрытия Автомобиля" delay={0.9} />
+            <ServiceItem icon={ServiceIcon6} text="Выезд Автомастер Круглосуточный" delay={1.0} />
+            <ServiceItem icon={ServiceIcon7} text="Выезд Автоэлектрик
+Круглосуточный" delay={1.1} />
+            <ServiceItem icon={ServiceIcon8} text="Замена Масла" delay={1.2} />
+            <ServiceItem icon={ServiceIcon9} text="Замена Шин" delay={1.3} />
+            <ServiceItem icon={ServiceIcon10} text="Обслуживание Двигателя" delay={1.4} />
+            <ServiceItem icon={ServiceIcon11} text="Диагностика" delay={1.5} />
+            <ServiceItem icon={ServiceIcon12} text="Сварочная работа" delay={1.6} />
+            <ServiceItem icon={ServiceIcon13} text="Токарная услуга" delay={1.7} />
+            <ServiceItem icon={ServiceIcon14} text="Тонировка" delay={1.8} />
+            <ServiceItem icon={ServiceIcon15} text="Моторист" delay={1.9} />
+            <ServiceItem icon={ServiceIcon16} text="Кастаправ" delay={2.0} />
          </ul>
       </div>
    );

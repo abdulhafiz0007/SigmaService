@@ -3,8 +3,13 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { FormContext } from "../../context/FormContext";
 
-export const Form = ({ isFormActive, setIsFormActive }) => {
+export const Form = ({ setShouldShowToast }) => {
+
+   const { isFormActive, setIsFormActive } = useContext(FormContext);
+
    const sendMessage = (evt) => {
       evt.preventDefault();
       const token = "7254513625:AAEhMcoF_YjIrcdmoWYfA1MCPwE3SMUd89M";
@@ -22,12 +27,13 @@ export const Form = ({ isFormActive, setIsFormActive }) => {
          },
       })
          .then((res) => {
-            toast.success("Message sent!", {
-                onClose: () => setIsFormActive(false,)
-            });
+            if(res.status === 200) {
+               setIsFormActive(false)
+               setShouldShowToast(true);
+            }
          })
          .catch((err) => toast.error("Message Failed"));
-   };
+      };
 
    return (
       isFormActive && (
@@ -64,20 +70,6 @@ export const Form = ({ isFormActive, setIsFormActive }) => {
                   Send
                </button>
             </motion.form>
-            <ToastContainer
-               position="top-right"
-               autoClose={5000}
-               hideProgressBar={false}
-               newestOnTop={false}
-               closeOnClick={false}
-               rtl={false}
-               pauseOnFocusLoss
-               draggable
-               pauseOnHover
-               theme="light"
-               toastClassName="!w-[80%] sm:!w-[400px] !mx-auto mt-5"
-               bodyClassName="text-sm"
-            />
          </div>
       )
    );

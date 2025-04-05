@@ -58,8 +58,8 @@ export const Header = () => {
          }`}
       >
          <div className="flex items-center justify-between border-b-[1px] border-slate-300">
-            <a href="index.html" className="site-header__logo">
-               <img src={Logo} alt="" />
+            <a href="#" className="site-header__logo">
+               <img src={Logo} alt="header logo" />
             </a>
             <div className="flex items-center gap-4">
                <nav className="site-header__nav navbar hidden lg:block">
@@ -154,7 +154,7 @@ export const Header = () => {
          <nav className={`${active ? "block pl-[60px] py-3" : "hidden"}`}>
             <ul className="flex flex-col items-start gap-4">
                <li
-                  onClick={() => handleNavClick("#home")}
+                  onClick={() => {handleNavClick("#home"); setActive(!active)}}
                   className="navbar__item"
                >
                   <a
@@ -169,7 +169,7 @@ export const Header = () => {
                   </a>
                </li>
                <li
-                  onClick={() => handleNavClick("#about")}
+                  onClick={() => {handleNavClick("#about"); setActive(!active)}}
                   className="navbar__item"
                >
                   <a
@@ -184,7 +184,7 @@ export const Header = () => {
                   </a>
                </li>
                <li
-                  onClick={() => handleNavClick("#service")}
+                  onClick={() => {handleNavClick("#service"); setActive(!active)}}
                   className="navbar__item"
                >
                   <a
@@ -199,7 +199,7 @@ export const Header = () => {
                   </a>
                </li>
                <li
-                  onClick={() => handleNavClick("#contact")}
+                 onClick={() => {handleNavClick("#contact"); setActive(!active)}}
                   className="navbar__item"
                >
                   <a
