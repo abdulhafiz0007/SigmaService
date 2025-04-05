@@ -5,9 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { FormContext } from "../../context/FormContext";
+import { useRef } from "react";
 
 export const Form = ({ setShouldShowToast }) => {
-
    const { isFormActive, setIsFormActive } = useContext(FormContext);
 
    const sendMessage = (evt) => {
@@ -15,8 +15,8 @@ export const Form = ({ setShouldShowToast }) => {
       const token = "7254513625:AAEhMcoF_YjIrcdmoWYfA1MCPwE3SMUd89M";
       const chat_id = 6552496082;
       const url = `https://api.telegram.org/bot${token}/sendMessage`;
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
+      const name = nameRef.current.value;
+      const phone = phoneRef.current.value;
       const messageContent = `Ism: ${name} \nTelfon raqam: ${phone}`;
       axios({
          url: url,
@@ -27,13 +27,16 @@ export const Form = ({ setShouldShowToast }) => {
          },
       })
          .then((res) => {
-            if(res.status === 200) {
-               setIsFormActive(false)
+            if (res.status === 200) {
+               setIsFormActive(false);
                setShouldShowToast(true);
             }
          })
          .catch((err) => toast.error("Message Failed"));
-      };
+   };
+
+   const nameRef = useRef();
+   const phoneRef = useRef();
 
    return (
       isFormActive && (
@@ -51,6 +54,7 @@ export const Form = ({ setShouldShowToast }) => {
             >
                <label htmlFor="">Name</label>
                <input
+                  ref={nameRef}
                   className="border-2 border-slate-500 rounded p-2 mb-4"
                   id="name"
                   type="text"
@@ -58,6 +62,7 @@ export const Form = ({ setShouldShowToast }) => {
                />
                <label htmlFor="">Phone</label>
                <input
+                  ref={phoneRef}
                   className="border-2 border-slate-500 rounded p-2"
                   id="phone"
                   type="number"
