@@ -10,15 +10,19 @@ import { FormContext } from "../../context/FormContext";
 export const Header = () => {
    const [isFixed, setIsFixed] = useState(false);
    const [active, setActive] = useState(false);
-   const [activeLink, setActiveLink] = useState("#home"); 
+   const [activeLink, setActiveLink] = useState("#home");
    const { isFormActive, setIsFormActive } = useContext(FormContext);
 
    useEffect(() => {
       const handleScroll = () => {
-         if (window.scrollY > 200) {
+         if (window.innerWidth < 1024) {
             setIsFixed(true);
          } else {
-            setIsFixed(false);
+            if (window.scrollY > 200) {
+               setIsFixed(true);
+            } else {
+               setIsFixed(false);
+            }
          }
       };
 
@@ -43,7 +47,7 @@ export const Header = () => {
    };
 
    const handleNavClick = (linkId) => {
-      setActiveLink(linkId); 
+      setActiveLink(linkId);
    };
 
    return (
@@ -53,7 +57,7 @@ export const Header = () => {
          animate={isFixed ? "visible" : "initial"}
          className={` bg-white transition-all duration-500 ease-in-out transform ${
             isFixed
-               ? "fixed top-0 left-0 right-0 shadow-lg z-50 translate-y-0 opacity-100"
+               ? "fixed top-0 left-0 right-0 shadow-lg z-40 translate-y-0 opacity-100"
                : "relative opacity-100 translate-y-0"
          }`}
       >
@@ -151,78 +155,100 @@ export const Header = () => {
                </button>
             </div>
          </div>
-         <nav className={`${active ? "block pl-[60px] py-3" : "hidden"}`}>
-            <ul className="flex flex-col items-start gap-4">
-               <li
-                  onClick={() => {handleNavClick("#home"); setActive(!active)}}
-                  className="navbar__item"
+         {active && (
+            <div
+               onClick={() => setActive(false)}
+               className="fixed inset-0 z-10 lg:hidden border-t-2"
+            >
+               <nav
+                  onClick={(evt) => evt.stopPropagation()}
+                  className="bg-white w-full h-[250px] pl-[30px] mt-[74px] pt-[20px] z-10"
                >
-                  <a
-                     href="#home"
-                     className={`navbar__item-link font-medium ${
-                        activeLink === "#home"
-                           ? "text-[#D81324]"
-                           : "text-[#111111]"
-                     }`}
-                  >
-                     Главная
-                  </a>
-               </li>
-               <li
-                  onClick={() => {handleNavClick("#about"); setActive(!active)}}
-                  className="navbar__item"
-               >
-                  <a
-                     href="#about"
-                     className={`navbar__item-link font-medium ${
-                        activeLink === "#about"
-                           ? "text-[#D81324]"
-                           : "text-[#111111]"
-                     }`}
-                  >
-                     О нас
-                  </a>
-               </li>
-               <li
-                  onClick={() => {handleNavClick("#service"); setActive(!active)}}
-                  className="navbar__item"
-               >
-                  <a
-                     href="#service"
-                     className={`navbar__item-link font-medium ${
-                        activeLink === "#service"
-                           ? "text-[#D81324]"
-                           : "text-[#111111]"
-                     }`}
-                  >
-                     Услуги
-                  </a>
-               </li>
-               <li
-                 onClick={() => {handleNavClick("#contact"); setActive(!active)}}
-                  className="navbar__item"
-               >
-                  <a
-                     href="#contact"
-                     className={`navbar__item-link font-medium ${
-                        activeLink === "#contact"
-                           ? "text-[#D81324]"
-                           : "text-[#111111]"
-                     }`}
-                  >
-                     Контакты
-                  </a>
-               </li>
-               <li className="navbar__item">
-                  <a
-                     href="tel:+99897 717 11 18"
-                     className="navbar__item-link font-medium text-[#111111]"
-                  >
-                     +99897 717 11 18
-                  </a>
-               </li>
-            </ul>
-         </nav>
+                  <ul className="flex flex-col items-start gap-4">
+                     <li
+                        onClick={() => {
+                           handleNavClick("#home");
+                           setActive(!active);
+                        }}
+                        className="navbar__item"
+                     >
+                        <a
+                           href="#home"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#home"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
+                           }`}
+                        >
+                           Главная
+                        </a>
+                     </li>
+                     <li
+                        onClick={() => {
+                           handleNavClick("#about");
+                           setActive(!active);
+                        }}
+                        className="navbar__item"
+                     >
+                        <a
+                           href="#about"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#about"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
+                           }`}
+                        >
+                           О нас
+                        </a>
+                     </li>
+                     <li
+                        onClick={() => {
+                           handleNavClick("#service");
+                           setActive(!active);
+                        }}
+                        className="navbar__item"
+                     >
+                        <a
+                           href="#service"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#service"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
+                           }`}
+                        >
+                           Услуги
+                        </a>
+                     </li>
+                     <li
+                        onClick={() => {
+                           handleNavClick("#contact");
+                           setActive(!active);
+                        }}
+                        className="navbar__item"
+                     >
+                        <a
+                           href="#contact"
+                           className={`navbar__item-link font-medium ${
+                              activeLink === "#contact"
+                                 ? "text-[#D81324]"
+                                 : "text-[#111111]"
+                           }`}
+                        >
+                           Контакты
+                        </a>
+                     </li>
+                     <li className="navbar__item">
+                        <a
+                           href="tel:+99897 717 11 18"
+                           className="navbar__item-link font-medium text-[#111111]"
+                        >
+                           +99897 717 11 18
+                        </a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         )}
          <Form isFormActive={isFormActive} setIsFormActive={setIsFormActive} />
       </motion.header>
    );
